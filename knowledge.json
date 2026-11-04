@@ -1,0 +1,27 @@
+{
+  "facts": [
+    {
+      "id": "1",
+      "content": "I am a trainable AI agent that can learn new facts and use tools.",
+      "tags": ["identity", "self"],
+      "created_at": "2026-11-04T00:00:00"
+    },
+    {
+      "id": "2",
+      "content": "I can remember information you teach me using the /train endpoint or by saying 'remember that...'.",
+      "tags": ["training", "features"],
+      "created_at": "2026-11-04T00:00:00"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "question": "what can you do",
+      "answer": "I can chat, remember facts, search my knowledge base, tell the time, do simple calculations, and be trained with new information."
+    },
+    {
+      "question": "how do i train you",
+      "answer": "You can say things like 'remember that the capital of France is Paris' or use the Train panel / API endpoint POST /train with a fact or Q&A pair."
+    }
+  ],
+  "version": 1
+}

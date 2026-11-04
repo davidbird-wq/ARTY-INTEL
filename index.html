@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trainable AI Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <span class="dot"></span>
+        <h1>Trainable AI Agent</h1>
+      </div>
+      <p class="tagline">Chat • Tools • Train me with new knowledge</p>
+    </header>
+
+    <main>
+      <!-- Chat Panel -->
+      <section class="panel chat-panel">
+        <div class="chat-header">
+          <h2>Chatbot</h2>
+          <button id="clear-chat" class="secondary small" type="button">Clear Chat</button>
+        </div>
+        <div id="messages" class="messages"></div>
+        <form id="chat-form" class="chat-form">
+          <input id="user-input" type="text" placeholder="Say something or teach me..." autocomplete="off" required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <!-- Side Panel -->
+      <aside class="side">
+        <!-- Abilities -->
+        <div class="panel">
+          <h2>Abilities</h2>
+          <ul class="abilities">
+            <li><code>get_time</code> – current date & time</li>
+            <li><code>calculate</code> – simple math</li>
+            <li><code>remember</code> – store a fact</li>
+            <li><code>search_knowledge</code> – look up what I know</li>
+            <li><code>list_abilities</code> – this list</li>
+          </ul>
+          <p class="hint">Try: “remember that my favorite color is blue” or “what time is it?”</p>
+        </div>
+
+        <!-- Train -->
+        <div class="panel">
+          <h2>Train Me</h2>
+          <form id="train-form">
+            <label>New Fact</label>
+            <textarea id="fact-input" rows="2" placeholder="e.g. The sky is blue on clear days"></textarea>
+            <button type="submit" class="secondary">Teach Fact</button>
+          </form>
+          <hr />
+          <form id="qa-form">
+            <label>Question</label>
+            <input id="q-input" type="text" placeholder="What is X?" />
+            <label>Answer</label>
+            <input id="a-input" type="text" placeholder="X is ..." />
+            <button type="submit" class="secondary">Teach Q&A</button>
+          </form>
+          <p id="train-status" class="status"></p>
+        </div>
+
+        <!-- Knowledge -->
+        <div class="panel">
+          <h2>Knowledge Base</h2>
+          <div class="kb-actions">
+            <button id="refresh-kb" class="secondary small">Refresh</button>
+            <button id="export-kb" class="secondary small">Export</button>
+            <button id="import-kb" class="secondary small">Import</button>
+            <input type="file" id="import-file" accept=".json,application/json" hidden />
+          </div>
+          <div id="kb-list" class="kb-list">Loading...</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Ready for <strong>Render</strong> • Open source trainable agent</p>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
